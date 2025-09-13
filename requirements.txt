@@ -1,7 +1,9 @@
-kagglehub
-kagglehub[pandas-datasets]
-pandas
-scikit-learn
-matplotlib
-seaborn
-numpy
+# I'm using the MacOS with M1 chip, if you are using Windows or Linux, you might need to adapt the versions below to your system
+kagglehub==0.3.13
+kagglehub[pandas-datasets]==0.3.13
+pandas==2.3.2
+scikit-learn==1.7.2
+matplotlib==3.10.6
+seaborn==0.13.2
+numpy==2.3.3
+tensorflow==2.20.0
