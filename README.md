@@ -26,20 +26,58 @@ diabetes-neural-network/
 
 ## Quick Start
 
-### Option 1: Start Both Services (Recommended)
-```bash
-# Install dependencies
-pip install -r app/requirements.txt
-pip install -r streamlit_requirements.txt
+### Prerequisites
+- Python 3.8 or higher
+- pip (Python package installer)
 
-# Start both API and Streamlit
+### Option 1: Start Both Services (Recommended)
+
+#### 1. Create and activate a virtual environment (Recommended)
+```bash
+# Create virtual environment
+python -m venv venv
+
+# Activate virtual environment
+# On macOS/Linux:
+source venv/bin/activate
+# On Windows:
+# venv\Scripts\activate
+```
+
+#### 2. Install dependencies
+```bash
+# Install API dependencies
+pip install -r app/requirements.txt
+
+# Install Streamlit dependencies
+pip install -r streamlit_requirements.txt
+```
+
+#### 3. Start both services
+```bash
 python start_services.py
 ```
 
-### Option 2: Start Services Separately
+### Option 2: Using the setup script
+```bash
+# Make setup script executable (macOS/Linux)
+chmod +x setup.sh
+
+# Run setup script (creates venv and installs dependencies)
+./setup.sh
+
+# Start services
+python start_services.py
+```
+
+### Option 3: Start Services Separately
 
 #### Start API Server
 ```bash
+# Make sure virtual environment is activated
+source venv/bin/activate  # On macOS/Linux
+# venv\Scripts\activate   # On Windows
+
 cd app
 pip install -r requirements.txt
 python run.py
@@ -47,6 +85,10 @@ python run.py
 
 #### Start Streamlit App (in another terminal)
 ```bash
+# Make sure virtual environment is activated
+source venv/bin/activate  # On macOS/Linux
+# venv\Scripts\activate   # On Windows
+
 pip install -r streamlit_requirements.txt
 streamlit run streamlit_app.py
 ```
@@ -115,6 +157,13 @@ print(response.json())
 - ✅ Professional UI/UX design
 
 ## 🛠️ Development
+
+### Best Practices
+- **Always use virtual environments** to isolate project dependencies
+- **Keep dependencies up to date** and pin versions in requirements.txt
+- **Test API endpoints** using the interactive docs at http://localhost:8000/docs
+- **Follow PEP 8** coding standards for Python code
+- **Use type hints** for better code documentation and IDE support
 
 ### Adding New Features
 1. **API**: Add endpoints in `app/api/v1/endpoints/`

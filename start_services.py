@@ -9,11 +9,19 @@ import threading
 import os
 from pathlib import Path
 
+def get_python_executable():
+    """Get the correct Python executable (prefer venv if available)"""
+    venv_python = Path("venv/bin/python")
+    if venv_python.exists():
+        return str(venv_python)
+    return sys.executable
+
 def start_api():
     """Start the FastAPI server"""
     print("🚀 Starting FastAPI server...")
     os.chdir("app")
-    subprocess.run([sys.executable, "run.py"])
+    python_exe = get_python_executable()
+    subprocess.run([python_exe, "run.py"])
 
 def start_streamlit():
     """Start the Streamlit app"""
@@ -21,7 +29,8 @@ def start_streamlit():
     time.sleep(5)  # Wait for API to start
     print("🎨 Starting Streamlit app...")
     os.chdir("..")
-    subprocess.run([sys.executable, "-m", "streamlit", "run", "streamlit_app.py"])
+    python_exe = get_python_executable()
+    subprocess.run([python_exe, "-m", "streamlit", "run", "streamlit_app.py"])
 
 def main():
     """Main function to start both services"""
