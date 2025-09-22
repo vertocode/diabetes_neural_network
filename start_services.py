@@ -19,9 +19,9 @@ def get_python_executable():
 def start_api():
     """Start the FastAPI server"""
     print("🚀 Starting FastAPI server...")
-    os.chdir("app")
     python_exe = get_python_executable()
-    subprocess.run([python_exe, "run.py"])
+    # Run from the project root, not from inside app directory
+    subprocess.run([python_exe, "-m", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"])
 
 def start_streamlit():
     """Start the Streamlit app"""
