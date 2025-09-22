@@ -460,7 +460,7 @@ requires-dist = [
     { name = "ipywidgets", specifier = "==8.1.7" },
     { name = "kagglehub", extras = ["pandas-datasets"], specifier = "==0.3.13" },
     { name = "matplotlib", specifier = "==3.10.6" },
-    { name = "mlflow", specifier = ">=3.4.0" },
+    { name = "mlflow", specifier = "==3.4.0" },
     { name = "numpy", specifier = "==2.1" },
     { name = "pandas", specifier = "==2.3.2" },
     { name = "scikit-learn", specifier = "==1.6.1" },
