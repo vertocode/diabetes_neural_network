@@ -2,6 +2,13 @@
 
 A professional neural network system for diabetes prediction with a FastAPI backend and Streamlit frontend.
 
+## Demo
+
+| **High Risk Prediction** | **Low Risk Prediction** |
+|-------------------------|-------------------------|
+| ![High Risk Demo](images/demo-with-diabetes.png) | ![Low Risk Demo](images/demo-without-diabetes.png) |
+| *Patient with high diabetes risk* | *Patient with low diabetes risk* |
+
 ## Project Structure
 
 ```
