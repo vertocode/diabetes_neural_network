@@ -1,0 +1,10 @@
+# I'm using the MacOS with M1 chip, if you are using Windows or Linux, you might need to adapt the versions below to your system
+kagglehub==0.3.13
+kagglehub[pandas-datasets]==0.3.13
+pandas==2.3.2
+scikit-learn==1.6.1
+matplotlib==3.10.6
+seaborn==0.13.2
+numpy==2.1
+tensorflow==2.19.1
+mlflow==3.4.0

@@ -11,9 +11,38 @@ from pathlib import Path
 
 def get_python_executable():
     """Get the correct Python executable (prefer venv if available)"""
-    venv_python = Path("venv/bin/python")
-    if venv_python.exists():
-        return str(venv_python)
+    # Check for different possible venv locations
+    possible_venvs = [
+        Path("venv/bin/python"),
+        Path(".venv/bin/python"),
+        Path("env/bin/python"),
+        Path(".env/bin/python")
+    ]
+    
+    for venv_python in possible_venvs:
+        if venv_python.exists():
+            print(f"Using virtual environment: {venv_python}")
+            return str(venv_python)
+    
+    print("Using system Python (no virtual environment found)")
+    return sys.executable
+
+def get_streamlit_executable():
+    """Get the correct Python executable for Streamlit (prefer venv if available)"""
+    # Check for different possible venv locations
+    possible_venvs = [
+        Path("venv/bin/python"),
+        Path(".venv/bin/python"),
+        Path("env/bin/python"),
+        Path(".env/bin/python")
+    ]
+    
+    for venv_python in possible_venvs:
+        if venv_python.exists():
+            print(f"Using virtual environment for Streamlit: {venv_python}")
+            return str(venv_python)
+    
+    print("Using system Python for Streamlit (no virtual environment found)")
     return sys.executable
 
 def start_api():
@@ -28,8 +57,8 @@ def start_streamlit():
     print("⏳ Waiting for API to start...")
     time.sleep(5)  # Wait for API to start
     print("🎨 Starting Streamlit app...")
-    os.chdir("..")
-    python_exe = get_python_executable()
+    # Don't change directory - stay in project root
+    python_exe = get_streamlit_executable()
     subprocess.run([python_exe, "-m", "streamlit", "run", "streamlit_app.py"])
 
 def main():

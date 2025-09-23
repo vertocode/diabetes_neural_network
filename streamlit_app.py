@@ -31,24 +31,223 @@ st.markdown("""
     }
     .prediction-card {
         background-color: #f0f2f6;
-        padding: 1rem;
+        padding: 1.5rem;
         border-radius: 0.5rem;
         margin: 1rem 0;
+        border: 2px solid #e0e0e0;
     }
     .high-risk {
         background-color: #ffebee;
         border-left: 5px solid #f44336;
+        color: #d32f2f;
     }
     .low-risk {
         background-color: #e8f5e8;
         border-left: 5px solid #4caf50;
+        color: #2e7d32;
     }
     .metric-card {
+        background-color: white;
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        margin: 0.5rem 0;
+        border: 1px solid #e0e0e0;
+    }
+    .metric-card h4 {
+        color: #000000 !important;
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
+    .metric-card p {
+        color: #000000 !important;
+        font-size: 0.95rem;
+        margin: 0.3rem 0;
+        line-height: 1.4;
+    }
+    .metric-card strong {
+        color: #000000 !important;
+        font-weight: 700;
+    }
+    .prediction-card h2 {
+        color: #000000 !important;
+        font-size: 2rem;
+        font-weight: bold;
+        margin: 0.5rem 0;
+    }
+    .prediction-card p {
+        color: #000000 !important;
+        font-size: 1.1rem;
+        margin: 0.5rem 0;
+        font-weight: 500;
+    }
+    .prediction-card strong {
+        color: #000000 !important;
+        font-weight: 700;
+    }
+    .stMetric {
         background-color: white;
         padding: 1rem;
         border-radius: 0.5rem;
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        border: 1px solid #e0e0e0;
+    }
+    .stMetric > div {
+        color: #333 !important;
+    }
+    .stMetric label {
+        color: #666 !important;
+        font-weight: 600 !important;
+        font-size: 0.9rem !important;
+    }
+    .stMetric div[data-testid="metric-value"] {
+        color: #333 !important;
+        font-size: 1.5rem !important;
+        font-weight: bold !important;
+    }
+    .stMetric div[data-testid="metric-delta"] {
+        color: #666 !important;
+        font-size: 0.8rem !important;
+    }
+    .stAlert {
+        background-color: #fff3cd;
+        border: 1px solid #ffeaa7;
+        color: #000000 !important;
+        padding: 1rem;
+        border-radius: 0.5rem;
         margin: 0.5rem 0;
+        font-weight: 600;
+    }
+    .stSuccess {
+        background-color: #d4edda;
+        border: 1px solid #c3e6cb;
+        color: #000000 !important;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        margin: 0.5rem 0;
+        font-weight: 600;
+    }
+    .stWarning {
+        background-color: #fff3cd;
+        border: 1px solid #ffeaa7;
+        color: #000000 !important;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        margin: 0.5rem 0;
+        font-weight: 600;
+    }
+    .stError {
+        background-color: #f8d7da;
+        border: 1px solid #f5c6cb;
+        color: #000000 !important;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        margin: 0.5rem 0;
+        font-weight: 600;
+    }
+    /* Forçar texto preto em todos os alertas */
+    .stAlert * {
+        color: #000000 !important;
+    }
+    .stSuccess * {
+        color: #000000 !important;
+    }
+    .stWarning * {
+        color: #000000 !important;
+    }
+    .stError * {
+        color: #000000 !important;
+    }
+    /* Melhorar legibilidade geral */
+    .main .block-container {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    .stSelectbox label, .stSlider label, .stNumberInput label {
+        color: #ffffff !important;
+        font-weight: 600 !important;
+        font-size: 1rem !important;
+    }
+    .stSelectbox > div > div, .stSlider > div > div, .stNumberInput > div > div {
+        color: #ffffff !important;
+    }
+    /* Labels e placeholders brancos para todos os inputs */
+    .stSelectbox label, .stSlider label, .stNumberInput label, 
+    .stTextInput label, .stTextArea label, .stDateInput label,
+    .stTimeInput label, .stFileUploader label {
+        color: #ffffff !important;
+        font-weight: 600 !important;
+        font-size: 1rem !important;
+    }
+    /* Placeholders brancos */
+    .stSelectbox input::placeholder, .stTextInput input::placeholder,
+    .stTextArea textarea::placeholder {
+        color: #ffffff !important;
+        opacity: 0.7 !important;
+    }
+    /* Valores dos inputs em branco */
+    .stSelectbox > div > div, .stSlider > div > div, .stNumberInput > div > div,
+    .stTextInput > div > div, .stTextArea > div > div {
+        color: #ffffff !important;
+    }
+    /* Valores dos sliders em branco */
+    .stSlider > div > div > div {
+        color: #ffffff !important;
+    }
+    /* Dropdown options em branco */
+    .stSelectbox [data-baseweb="select"] {
+        color: #ffffff !important;
+    }
+    .stSelectbox [data-baseweb="select"] > div {
+        color: #ffffff !important;
+    }
+    /* Forçar texto branco em todos os elementos do sidebar */
+    .css-1d391kg {
+        color: #ffffff !important;
+    }
+    .css-1d391kg label {
+        color: #ffffff !important;
+    }
+    .css-1d391kg div {
+        color: #ffffff !important;
+    }
+    /* Elementos específicos do Streamlit */
+    .stSelectbox, .stSlider, .stNumberInput, .stTextInput, .stTextArea {
+        color: #ffffff !important;
+    }
+    .stSelectbox *, .stSlider *, .stNumberInput *, .stTextInput *, .stTextArea * {
+        color: #ffffff !important;
+    }
+    /* Valores dos sliders específicos */
+    .stSlider [data-testid="stSlider"] {
+        color: #ffffff !important;
+    }
+    .stSlider [data-testid="stSlider"] * {
+        color: #ffffff !important;
+    }
+    /* Dropdown values */
+    .stSelectbox [data-baseweb="select"] span {
+        color: #ffffff !important;
+    }
+    /* Form labels específicos */
+    .stForm label {
+        color: #ffffff !important;
+        font-weight: 600 !important;
+    }
+    /* Forçar texto preto em todos os cards customizados */
+    .metric-card * {
+        color: #000000 !important;
+    }
+    .prediction-card * {
+        color: #000000 !important;
+    }
+    /* Garantir que elementos específicos do Streamlit tenham texto preto */
+    .stAlert div, .stSuccess div, .stWarning div, .stError div {
+        color: #000000 !important;
+    }
+    .stAlert span, .stSuccess span, .stWarning span, .stError span {
+        color: #000000 !important;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -221,7 +420,7 @@ def main():
             <h4>🔗 API Status</h4>
             <p><strong>Status:</strong> ✅ Connected</p>
             <p><strong>Endpoint:</strong> localhost:8000</p>
-            <p><strong>Response Time:</strong> < 1s</p>
+            <p><strong>Response Time:</strong> &lt; 1s</p>
         </div>
         """, unsafe_allow_html=True)
         
@@ -247,7 +446,7 @@ def main():
     st.markdown("---")
     st.markdown("""
     <div style="text-align: center; color: #666;">
-        <p>🏥 Diabetes Prediction System | Powered by Neural Networks | API v1.0.0</p>
+        <p>🏥 Diabetes Prediction System | Developed by Group 2 - Infnet Neural Networks Course | API v1.0.0</p>
         <p>⚠️ This tool is for educational purposes only. Consult healthcare professionals for medical advice.</p>
     </div>
     """, unsafe_allow_html=True)
