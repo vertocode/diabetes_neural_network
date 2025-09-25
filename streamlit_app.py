@@ -437,7 +437,7 @@ def main():
                     with col_metric3:
                         st.metric(
                             label="Model Performance",
-                            value="96.95%",
+                            value="89%",
                             delta="Recall Score"
                         )
                     
@@ -476,8 +476,8 @@ def main():
         st.markdown("""
         <div class="metric-card">
             <h4>🧠 Neural Network Model</h4>
-            <p><strong>Architecture:</strong> 5-layer deep network</p>
-            <p><strong>Performance:</strong> 96.95% recall</p>
+            <p><strong>Architecture:</strong> 3-layer deep network</p>
+            <p><strong>Performance:</strong> 89% recall</p>
             <p><strong>Features:</strong> 12 health metrics</p>
             <p><strong>Type:</strong> Binary classification</p>
             <p><strong>Model:</strong> model.h5 (loaded directly)</p>
