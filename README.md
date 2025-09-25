@@ -4,6 +4,8 @@ A professional neural network system for diabetes prediction with a FastAPI back
 
 ## Demo
 
+- https://diabetes-prediction-infnet.streamlit.app/
+
 | **High Risk Prediction** | **Low Risk Prediction** |
 |-------------------------|-------------------------|
 | ![High Risk Demo](images/demo-with-diabetes.png) | ![Low Risk Demo](images/demo-without-diabetes.png) |
