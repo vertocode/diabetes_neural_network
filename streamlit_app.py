@@ -264,7 +264,6 @@ def load_model():
         
         # Load the model
         model = tf.keras.models.load_model(model_path)
-        st.success("✅ Model loaded successfully!")
         return model
         
     except Exception as e:
@@ -369,6 +368,52 @@ def main():
     
     with col1:
         st.markdown("### Patient Assessment")
+        
+        if not submitted:
+            # Welcome message when no data is submitted
+            st.markdown("""
+            <div style="
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                padding: 2rem;
+                border-radius: 15px;
+                text-align: center;
+                color: white;
+                margin: 2rem 0;
+                box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            ">
+                <div style="font-size: 4rem; margin-bottom: 1rem;">🏥</div>
+                <h2 style="color: white; margin-bottom: 1rem; font-weight: 600;">
+                    Welcome to Diabetes Risk Assessment
+                </h2>
+                <p style="font-size: 1.1rem; margin-bottom: 1.5rem; opacity: 0.9;">
+                    Please fill in the patient information in the sidebar to get started with the diabetes risk prediction.
+                </p>
+                <div style="
+                    background: rgba(255,255,255,0.2);
+                    padding: 1rem;
+                    border-radius: 10px;
+                    margin: 1rem 0;
+                ">
+                    <p style="margin: 0; font-weight: 500;">
+                        📋 Complete the form on the left → 🔍 Get instant results here
+                    </p>
+                </div>
+                <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 1.5rem;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 2rem;">⚡</div>
+                        <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem;">Fast Analysis</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 2rem;">🎯</div>
+                        <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem;">Accurate Results</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 2rem;">🔬</div>
+                        <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem;">AI-Powered</p>
+                    </div>
+                </div>
+            </div>
+            """, unsafe_allow_html=True)
         
         if submitted:
             # Prepare data for prediction
