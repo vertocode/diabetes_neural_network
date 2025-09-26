@@ -333,9 +333,6 @@ def get_confidence_level(probability):
         return "Low"
 
 def main():
-    # Header
-    st.markdown('<h1 class="main-header">🏥 Diabetes Prediction System</h1>', unsafe_allow_html=True)
-    
     # Load model
     with st.spinner("Loading diabetes prediction model..."):
         model = load_model()
