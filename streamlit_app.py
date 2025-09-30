@@ -90,21 +90,21 @@ st.markdown("""
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         border: 1px solid #e0e0e0;
     }
-    .stMetric > div {
-        color: #333 !important;
+    /* Forçar texto preto em todos os elementos st.metric */
+    .stMetric * {
+        color: #000000 !important;
     }
     .stMetric label {
-        color: #666 !important;
+        color: #000000 !important;
         font-weight: 600 !important;
-        font-size: 0.9rem !important;
     }
     .stMetric div[data-testid="metric-value"] {
-        color: #333 !important;
+        color: #000000 !important;
         font-size: 1.5rem !important;
         font-weight: bold !important;
     }
     .stMetric div[data-testid="metric-delta"] {
-        color: #666 !important;
+        color: #000000 !important;
         font-size: 0.8rem !important;
     }
     .stAlert {
